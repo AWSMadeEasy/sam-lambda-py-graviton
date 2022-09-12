@@ -1,23 +1,31 @@
 # List the start up tasks. Learn more https://www.gitpod.io/docs/config-start-tasks/
 tasks:
-  - name: "Install AWS SAM cli"
+  - name: "AWS SAM cli install"
     init: |
-      echo 'Installing AWS SAM cli' # runs during prebuild
+      echo "Installing AWS SAM cli" # runs during prebuild
       wget https://github.com/aws/aws-sam-cli/releases/latest/download/aws-sam-cli-linux-x86_64.zip
       unzip aws-sam-cli-linux-x86_64.zip -d sam-installation
       sudo ./sam-installation/install
       sam --version
       rm -rf sam-installation
       rm aws-sam-cli-linux-x86_64.zip
+      gp sync-done SAM-install
+
+  - name: "Pyenv install"
+    init: |
+      echo "Installing CLI"
       pyenv install 3.9-dev
       pyenv global 3.9-dev
-  - name: "Setup python environment"
+      gp sync-done pyenv-install
+
+  - name: "Lambda function install"
     init: |
-      pyenv install 3.9-dev
-      pyenv global 3.9-dev
-  - name: "Installing"
-    init: |
-      echo "TODO - SAM BUILD/ SAM DEPLOY"
+      echo "SAM build and deploy"
+      gp sync-await SAM-install
+      gp sync-await pyenv-install
+      sam build
+      sam deploy
+
 # List the ports to expose. Learn more https://www.gitpod.io/docs/config-ports/
 ports:
   - port: 3000
