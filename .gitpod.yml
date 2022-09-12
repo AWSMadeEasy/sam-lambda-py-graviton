@@ -6,6 +6,8 @@ tasks:
       unzip aws-sam-cli-linux-x86_64.zip -d sam-installation
       sudo ./sam-installation/install
       sam --version
+      rm -rf sam-installation
+      rm aws-sam-cli-linux-x86_64.zip
 # List the ports to expose. Learn more https://www.gitpod.io/docs/config-ports/
 ports:
   - port: 3000
