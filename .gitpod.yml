@@ -23,8 +23,9 @@ tasks:
       echo "SAM build and deploy"
       gp sync-await SAM-install
       gp sync-await pyenv-install
+    command: |
       sam build
-      sam deploy
+      sam deploy --no-confirm-changeset
 
 # List the ports to expose. Learn more https://www.gitpod.io/docs/config-ports/
 ports:
