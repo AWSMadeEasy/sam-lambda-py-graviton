@@ -11,6 +11,10 @@ Users will need to configure environmental variables to use this repo.  You will
 `export AWS_DEFAULT_REGION=us-east-1`
 `export PY_LAMBDA_FN_STACK='helloworldstack'`
 
+## Deploying
+
+Deploy lambda function using provided `build.sh` script
+
 ## Cleanup resources
 
-Delete your created stack from your container by running `sam delete --stack-name $PY_LAMBDA_FN_STACK`
+Remove the stack using `clean.sh` to remove the current stack defined at `$PY_LAMBDA_FN_STACK`.  Be wary of stray resources when changing this variable.
