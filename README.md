@@ -18,3 +18,7 @@ Deploy lambda function using provided `build.sh` script
 ## Cleanup resources
 
 Remove the stack using `clean.sh` to remove the current stack defined at `$PY_LAMBDA_FN_STACK`.  Be wary of stray resources when changing this variable.
+
+## Editing the example
+
+Add your own python code to `/python/app.py` in function `lambda_handler`.
