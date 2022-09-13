@@ -9,10 +9,10 @@ Globals:
     Timeout: 3
 
 Resources:
-  HelloWorldFunction:
+  PyFunction:
     Type: AWS::Serverless::Function
     Properties:
-      CodeUri: hello_world/
+      CodeUri: python/
       Handler: app.lambda_handler
       Runtime: python3.9
       Architectures:
@@ -25,7 +25,7 @@ Resources:
             - "*"
 
 Outputs:
-  HelloWorldEndpoint:
-    Description: "Hello World Endpoint"
+  PyEndpoint:
+    Description: "PyFunction Endpoint"
     Value:
-      Fn::GetAtt: HelloWorldFunctionUrl.FunctionUrl
+      Fn::GetAtt: PyFunctionUrl.FunctionUrl

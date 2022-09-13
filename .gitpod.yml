@@ -1,3 +1,4 @@
+---
 # List the start up tasks. Learn more https://www.gitpod.io/docs/config-start-tasks/
 tasks:
   - name: "AWS SAM cli install"
@@ -18,14 +19,14 @@ tasks:
       pyenv global 3.9-dev
       gp sync-done pyenv-install
 
-  - name: "Lambda function install"
+  - name: "AWS SAM Build and Deploy"
     init: |
       echo "SAM build and deploy"
       gp sync-await SAM-install
       gp sync-await pyenv-install
     command: |
       sam build
-      sam deploy --no-confirm-changeset
+      sam deploy --stack-name $PY_LAMBDA_FN_STACK --resolve-s3
 
 # List the ports to expose. Learn more https://www.gitpod.io/docs/config-ports/
 ports:

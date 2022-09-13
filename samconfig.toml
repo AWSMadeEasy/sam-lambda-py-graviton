@@ -2,11 +2,8 @@ version = 0.1
 [default]
 [default.deploy]
 [default.deploy.parameters]
-stack_name = "helloworldstack"
-s3_bucket = "aws-sam-cli-managed-default-samclisourcebucket-1jb00n73u3y2q"
-s3_prefix = "helloworldstack"
 region = "us-east-1"
-confirm_changeset = true
+confirm_changeset = false
 capabilities = "CAPABILITY_IAM"
 image_repositories = []
 disable_rollback = true
