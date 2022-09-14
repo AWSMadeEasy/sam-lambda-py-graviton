@@ -5,15 +5,15 @@ image:
 # List the start up tasks. Learn more https://www.gitpod.io/docs/config-start-tasks/
 tasks:
   - name: "AWS SAM cli install"
-    init: |
-      echo "Installing AWS SAM cli" # runs during prebuild
-      wget https://github.com/aws/aws-sam-cli/releases/latest/download/aws-sam-cli-linux-x86_64.zip
-      unzip aws-sam-cli-linux-x86_64.zip -d sam-installation
-      sudo ./sam-installation/install
-      sam --version
-      rm -rf sam-installation
-      rm aws-sam-cli-linux-x86_64.zip
-      gp sync-done SAM-install
+    init: pip install aws-sam-cli
+#      echo "Installing AWS SAM cli" # runs during prebuild
+#      wget https://github.com/aws/aws-sam-cli/releases/latest/download/aws-sam-cli-linux-x86_64.zip
+#      unzip aws-sam-cli-linux-x86_64.zip -d sam-installation
+#      sudo ./sam-installation/install
+#      sam --version
+#      rm -rf sam-installation
+#      rm aws-sam-cli-linux-x86_64.zip
+#      gp sync-done SAM-install
 
 #  - name: "Pyenv install"
 #    init: |
