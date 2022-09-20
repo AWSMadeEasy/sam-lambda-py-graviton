@@ -1,15 +1,18 @@
 #!/bin/bash
-#set -e  # Exit on error
 
-#set -x  # Print commands, with variables filled in
+<<docblock
+Execute sam local deploy on input test files.  If no arguments are
+provided to this script it will run on test_inputs/event.json.
+One or more arguments can also be specified to this script to
+execute and test local deployments on multiple files.
+docblock
 
-testdir=test_inputs
 
 sam build
 
 events=$@
 if [ -z "$events" ]; then
-    events=$testdir/event.json
+    events=test_inputs/event.json
 fi
 
 for event in $events; do
