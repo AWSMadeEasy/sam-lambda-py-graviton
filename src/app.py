@@ -1,7 +1,6 @@
 import json
 
-# import requests
-
+import bcrypt
 
 def lambda_handler(event, context):
     """Sample pure Lambda function
