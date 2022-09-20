@@ -12,7 +12,7 @@ Resources:
   PyFunction:
     Type: AWS::Serverless::Function
     Properties:
-      CodeUri: python/
+      CodeUri: src/
       Handler: app.lambda_handler
       Runtime: python3.9
       Architectures:
