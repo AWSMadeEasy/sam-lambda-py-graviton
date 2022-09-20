@@ -10,9 +10,13 @@ Users will need to configure environmental variables to use this repo.  You will
 `export AWS_SECRET_ACCESS_KEY=qKIFEWFSECRETKEY`
 `export PY_LAMBDA_FN_STACK='helloworldstack'`
 
-## Test and Deploy
+## Local testing
 
-Run `test_lambda_local.sh` to run the lamba function locally while passing in `event.json` as input.  Use `deploy_to_aws.sh` to deploy to production.
+Test the lambda function locally with `./test_lambda_local.sh`.  Running with no args will pass in `test_inputs/event.json` as the function input.  Pass a list of args to json files (i.e. `./test_local_lambda.sh test1.json test2.json` or `./test_local_lambda.sh test_inputs/*`) to test multiple inputs.
+
+## Deploy
+
+Use `deploy_to_aws.sh` to deploy to production.
 
 ```sh
 PY_LAMBDA_FN_STACK='sjb-test-stack-2' ./build.sh
