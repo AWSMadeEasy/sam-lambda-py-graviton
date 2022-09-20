@@ -6,8 +6,9 @@ image:
 tasks:
   - name: "AWS SAM cli install"
     init: python -m pip install --upgrade pip
-    pip install aws-sam-cli
-    pip install -r requirements.txt
+    command: |
+      pip install aws-sam-cli
+      pip install -r requirements.txt
 
 
 # List the ports to expose. Learn more https://www.gitpod.io/docs/config-ports/
