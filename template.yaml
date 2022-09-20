@@ -16,7 +16,7 @@ Resources:
       Handler: app.lambda_handler
       Runtime: python3.9
       Architectures:
-        - x86_64
+        - arm64
       AutoPublishAlias: live
       FunctionUrlConfig:
         AuthType: NONE

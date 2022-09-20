@@ -14,6 +14,9 @@ Users will need to configure environmental variables to use this repo.  You will
 
 Test the lambda function locally with `./test_lambda_local.sh`.  Running with no args will pass in `test_inputs/event.json` as the function input.  Pass a list of args to json files (i.e. `./test_local_lambda.sh test1.json test2.json` or `./test_local_lambda.sh test_inputs/*`) to test multiple inputs.
 
+Local testing of arm64 containers on x86 requires Docker and emulation configuration.  See notes on [installing AWS SAM](https://docs.aws.amazon.com/serverless-application-model/latest/developerguide/serverless-sam-cli-install-linux.html).
+`docker run --rm --privileged multiarch/qemu-user-static --reset -p yes`
+
 ## Deploy
 
 Use `deploy_to_aws.sh` to deploy to production.

@@ -5,7 +5,9 @@ image:
 # List the start up tasks. Learn more https://www.gitpod.io/docs/config-start-tasks/
 tasks:
   - name: "AWS SAM cli install"
-    init: pip install aws-sam-cli
+    init: python -m pip install --upgrade pip
+    pip install aws-sam-cli
+    pip install -r requirements.txt
 
 
 # List the ports to expose. Learn more https://www.gitpod.io/docs/config-ports/
