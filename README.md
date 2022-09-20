@@ -7,7 +7,9 @@ Deploy an AWS lambda function using SAM.
 Users will need to configure environmental variables to use this repo.  You will need to define your AWS credentials and region, and provide a name for the AWS CloudFormation [stack](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/stacks.html).
 
 `export AWS_ACCESS_KEY_ID=AKAIIYOURKEY`
+
 `export AWS_SECRET_ACCESS_KEY=qKIFEWFSECRETKEY`
+
 `export PY_LAMBDA_FN_STACK='helloworldstack'`
 
 ## Local testing
