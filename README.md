@@ -1,4 +1,4 @@
-# Gitpod Python AWS Lambda Function
+# Python AWS Lambda Function, using DevSpaces
 
 Deploy an AWS lambda function using SAM.
 
