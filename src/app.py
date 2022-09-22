@@ -24,10 +24,10 @@ def lambda_handler(event, context):
         Return doc: https://docs.aws.amazon.com/apigateway/latest/developerguide/set-up-lambda-proxy-integrations.html
     """
 
-
-    body = json.dumps(event['statement_to_return'])
+    
+    body_str = json.dumps({"hello" : "world"})
 
     return {
         "statusCode": 201,
-        "body": body,
+        "body": body_str,
     }
