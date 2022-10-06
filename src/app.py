@@ -29,5 +29,5 @@ def lambda_handler(event, context):
 
     return {
         "statusCode": 201,
-        "body": body_str,
+        "body": body_str
     }
